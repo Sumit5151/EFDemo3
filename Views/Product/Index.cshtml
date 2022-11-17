@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Product>
+
+
+<table class="table tbl-primary tbl-borderd">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Category Name</th>
+             <th>Action</th>
+             <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @{
+            foreach (var product in Model)
+            {
+                <tr>
+                <td>@product.Id </td>
+                <td>@product.Name </td>
+                <td>@product.CagtegoryName </td>
+                 <td><a asp-action="Update" asp-controller="Product" asp-route-id="@product.Id">Update</a> </td>
+                  <td><a asp-action="Delete" asp-controller="Product"  asp-route-id="@product.Id" >Delete</a> </td>
+                </tr>
+            }
+
+        }
+
+    </tbody>
+</table>
+
+<a asp-action="Create" asp-controller="Product">Create new Product</a>
