@@ -52,7 +52,7 @@ namespace EFDemo3.Controllers
             productToUpdte.CagtegoryName = product.CagtegoryName;
 
             db.SaveChanges();
-            return View();
+            return RedirectToAction("Index");
         }
         public IActionResult Delete(int id)
         {
